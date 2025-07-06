@@ -8,14 +8,14 @@ STD-003	UNECE R157 (“Automated Lane Keeping Systems”)	Functional limits & tr
 STD-004	ISO 23150:2023 (“Lidar Sensor Model Test”)	Sensor-model fidelity for virtual validation
  
 3  Definitions & Abbreviations
-•	DDT – Dynamic Driving Task.
-•	OC – Operational Conditions (speed, weather, road class).
-•	HMI – Human–Machine Interface (alerts, displays).
+DDT – Dynamic Driving Task.
+OC – Operational Conditions (speed, weather, road class).
+HMI – Human–Machine Interface (alerts, displays).
 4  High-Level Architecture Context
 The ADAS/AD domain comprises five logical subsystems (Perception, Localization, Prediction, Planning, Actuation-Interface) plus supporting ECUs and cloud services. Interfaces:
-•	Vehicle Bus: 100BASE-T1 ETH / CAN-FD (2 Mbit s-¹).
-•	Sensor Set: Front & rear cameras, 4 corner radar, 1 roof lidar, GNSS/IMU.
-•	Driver Monitoring: In-cab camera + capacitive steering-wheel sensor.
+Vehicle Bus: 100BASE-T1 ETH / CAN-FD (2 Mbit s-¹).
+Sensor Set: Front & rear cameras, 4 corner radar, 1 roof lidar, GNSS/IMU.
+Driver Monitoring: In-cab camera + capacitive steering-wheel sensor.
 5  System Requirements
 Numbering convention: AD-⟨Group⟩-###; “shall” = mandatory.
 5.1  Functional (map to SysML package «Functional»)
@@ -61,7 +61,6 @@ AD-HMI-071	System mode (Off, Standby, Active, TD, MRM) shall be identifiable by 
 ID	Requirement
 AD-SUS-080	At least 75 % of sensor-module mass shall be recyclable materials documented by ISO 14021.
  
-________________________________________
 6  Verification & Validation Strategy
 Layer	Method	Key Metrics
 MiL/SiL	Closed-loop simulation with Euro NCAP VRU scenarios	Perception FN rate, planning latency
@@ -69,9 +68,7 @@ HiL	Fault injection on dual-channel safety monitors	Safe-state reaction time
 Track Tests	UNECE R157 lanes & cut-in maneuvers	ODD exit handling, driver TD success
 FOT	1 M km shadow-mode fleet logging	Residual risk rate vs KPI target 1 × 10⁻⁸/ h
  
-________________________________________
 7  Traceability & Change Control
-•	Each AD-xxx-### requirement is a «requirement» element in your SysML model.
-•	Use «satisfy» links from design blocks, «verify» links from test cases, and «deriveReqt» where lower-level ECU or sensor requirements emerge.
-•	Managed in SysModeler ALM with two-step review (Architect → Safety Lead).
-
+Each AD-xxx-### requirement is a «requirement» element in your SysML model.
+Use «satisfy» links from design blocks, «verify» links from test cases, and «deriveReqt» where lower-level ECU or sensor requirements emerge.
+Managed in SysModeler ALM with two-step review (Architect → Safety Lead).
